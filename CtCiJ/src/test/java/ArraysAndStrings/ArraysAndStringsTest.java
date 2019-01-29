@@ -9,7 +9,7 @@ class ArraysAndStringsTest {
     @Test
     void testURLify() {
         assertEquals("Mr%20John%20Smith",
-                ArraysAndStrings.URLify("Mr John Smith", 13));
+                ArraysAndStrings.URLify("Mr John Smith    ", 13));
     }
 
 }
