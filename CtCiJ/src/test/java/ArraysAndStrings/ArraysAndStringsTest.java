@@ -12,4 +12,13 @@ class ArraysAndStringsTest {
                 ArraysAndStrings.URLify("Mr John Smith    ", 13));
     }
 
+    @Test
+    void testIfIsUniqueReturnsFalse() {
+        assertFalse(ArraysAndStrings.isUnique("fgdghd"));
+    }
+
+    @Test
+    void testifIsUniqueReturnsTrue() {
+        assertTrue(ArraysAndStrings.isUnique("igen"));
+    }
 }
