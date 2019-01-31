@@ -13,6 +13,12 @@ class ArraysAndStringsTest {
     }
 
     @Test
+    void testIsPermutation() {
+        assertTrue(ArraysAndStrings.isPermutation("bombay", "baymob"));
+        assertFalse(ArraysAndStrings.isPermutation("soros", "sors"));
+    }
+
+    @Test
     void testIfIsUniqueReturnsFalse() {
         assertFalse(ArraysAndStrings.isUnique("fgdghd"));
     }
