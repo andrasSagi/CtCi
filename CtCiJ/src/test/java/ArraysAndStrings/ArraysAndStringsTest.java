@@ -24,7 +24,16 @@ class ArraysAndStringsTest {
     }
 
     @Test
-    void testifIsUniqueReturnsTrue() {
+    void testIfIsUniqueReturnsTrue() {
         assertTrue(ArraysAndStrings.isUnique("igen"));
+    }
+
+    @Test
+    void testOneAway() {
+        assertTrue(ArraysAndStrings.oneAway("pale", "ple"));
+        assertTrue(ArraysAndStrings.oneAway("pales", "pale"));
+        assertTrue(ArraysAndStrings.oneAway("bale", "bale"));
+        assertTrue(ArraysAndStrings.oneAway("pale", "bale"));
+        assertFalse(ArraysAndStrings.oneAway("pale", "bae"));
     }
 }
