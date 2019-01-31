@@ -40,4 +40,38 @@ class ArraysAndStrings {
         }
         return new String(characters);
     }
+
+    static boolean oneAway(String string1, String string2) {
+        if (Math.abs(string1.length() - string2.length()) > 1) {
+            return false;
+        }
+        boolean editUsed = false;
+        if (string1.length() == string2.length()) {
+            for (int i = 0; i < string1.length(); i++) {
+                if (string1.charAt(i) != string2.charAt(i) && !editUsed) {
+                    editUsed = true;
+                } else if (string1.charAt(i) != string2.charAt(i) && editUsed) {
+                    return false;
+                }
+            }
+        } else {
+            int index = 0;
+            String longer = string1;
+            String shorter = string2;
+            if (string1.length() < string2.length()) {
+                longer = string2;
+                shorter = string1;
+            }
+            for (int j = 0; j < shorter.length(); j++) {
+                if (longer.charAt(index) != shorter.charAt(j) && !editUsed) {
+                    editUsed = true;
+                    index++;
+                } else if (longer.charAt(index) != shorter.charAt(j) && editUsed) {
+                    return false;
+                }
+                index++;
+            }
+        }
+        return true;
+    }
 }
