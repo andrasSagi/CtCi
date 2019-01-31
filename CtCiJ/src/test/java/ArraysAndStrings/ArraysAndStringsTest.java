@@ -36,4 +36,14 @@ class ArraysAndStringsTest {
         assertTrue(ArraysAndStrings.oneAway("pale", "bale"));
         assertFalse(ArraysAndStrings.oneAway("pale", "bae"));
     }
+
+    @Test
+    void testCompressWithRepetionInInput() {
+        assertEquals("a2b1c5a3", ArraysAndStrings.compress("aabcccccaaa"));
+    }
+
+    @Test
+    void testCompressWithoutRepetitionInInput() {
+        assertEquals("abcde", ArraysAndStrings.compress("abcde"));
+    }
 }
