@@ -78,4 +78,31 @@ class ArraysAndStrings {
         }
         return true;
     }
+
+    static String compress(String string) {
+        char[] compressed = new char[string.length() - 1];
+        char current = string.charAt(0);
+        char currentCounter = 1;
+        compressed[0] = current;
+        int compressedIndex = 1;
+        int compressedLengthCounter = 2;
+        final int x = 10;
+        for (int i = 1; i < string.length(); i++) {
+            if (compressedIndex >= compressed.length - 1) {
+                return string;
+            }
+            if (string.charAt(i) == current) {
+                currentCounter++;
+            } else {
+                compressed[compressedIndex++] = Character.forDigit(currentCounter, x);
+                current = string.charAt(i);
+                compressed[compressedIndex++] = current;
+                currentCounter = 1;
+                compressedLengthCounter += 2;
+            }
+        }
+        compressed[compressedIndex] = Character.forDigit(currentCounter, x);
+        compressed = Arrays.copyOfRange(compressed, 0, compressedLengthCounter);
+        return new String(compressed);
+    }
 }
