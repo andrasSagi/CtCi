@@ -1,5 +1,7 @@
 package ArraysAndStrings;
 
+import java.util.Arrays;
+
 class ArraysAndStrings {
 
     static boolean isUnique(String input) {
@@ -11,6 +13,14 @@ class ArraysAndStrings {
             }
         }
         return true;
+    }
+
+    static boolean isPermutation(String string1, String string2) {
+        char[] charSet1 = string1.toCharArray();
+        char[] charSet2 = string2.toCharArray();
+        Arrays.sort(charSet1);
+        Arrays.sort(charSet2);
+        return Arrays.equals(charSet1, charSet2);
     }
 
     static String URLify(String input, int trueLength) {
