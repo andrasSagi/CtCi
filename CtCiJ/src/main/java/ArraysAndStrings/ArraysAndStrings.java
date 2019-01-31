@@ -16,11 +16,13 @@ class ArraysAndStrings {
     }
 
     static boolean isPermutation(String string1, String string2) {
-        char[] charSet1 = string1.toCharArray();
-        char[] charSet2 = string2.toCharArray();
-        Arrays.sort(charSet1);
-        Arrays.sort(charSet2);
-        return Arrays.equals(charSet1, charSet2);
+        return Arrays.equals(sortToArray(string1), sortToArray(string2));
+    }
+
+    private static char[] sortToArray(String string) {
+        char[] chars = string.toCharArray();
+        Arrays.sort(chars);
+        return chars;
     }
 
     static String URLify(String input, int trueLength) {
